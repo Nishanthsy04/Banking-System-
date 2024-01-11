@@ -11,6 +11,7 @@ private:
 
 public:
     void open_account() {
+        cin.ignore(); // Clear the newline character left in the buffer
         cout << "Enter your full name: ";
         getline(cin, name);
         cout << "Enter your address: ";
@@ -27,7 +28,7 @@ public:
         cout << "Enter how much money you want to deposit: ";
         cin >> Amount;
         balance += Amount;
-        cout << "\n Available Balance: " << balance;
+        cout << "\nAvailable Balance: " << balance;
     }
 
     void withdraw_money() {
@@ -35,7 +36,7 @@ public:
         cout << "Enter how much money you want to withdraw: ";
         cin >> amount;
         balance -= amount;
-        cout << "\n Available balance: " << balance;
+        cout << "\nAvailable balance: " << balance;
     }
 
     void display_account() {
@@ -60,6 +61,7 @@ int main() {
         cout << "6) Exit" << endl;
         cout << "Enter your choice: ";
         cin >> choice;
+        cin.ignore(); // Clear the newline character from the buffer
 
         switch (choice) {
             case 1:
@@ -113,4 +115,3 @@ int main() {
 
     return 0;
 }
-
